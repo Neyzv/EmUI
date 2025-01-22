@@ -3,10 +3,13 @@
         xmlns:vm="using:EmUI.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:media="using:Iciclecreek.Avalonia.Controls.Media"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="EmUI.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
+        WindowState="Maximized"
+        Topmost="True"
         Title="EmUI">
 
     <Design.DataContext>
@@ -15,6 +18,9 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+    <Grid Background="Red">
+        <media:VideoView Name="VideoPlayer"
+                         Source="{Binding VideoPath}"/>
+        
+    </Grid>
 </Window>
